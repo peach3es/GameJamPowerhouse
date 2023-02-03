@@ -17,16 +17,16 @@ public class layerSwitch : MonoBehaviour
     {
         if (Input.GetKeyDown("space"))
         {
-            if (ground_layer.activeSelf)
+            if (ground_layer.GetComponent<Renderer>()) //Check if ground or underground is visible
             {
-                underGround_layer.SetActive(true);
-                ground_layer.SetActive(false);
+                ground_layer.GetComponent<Renderer>().enabled = !(ground_layer.GetComponent<Renderer>().enabled); //sets ground layer to visible and then makes it equal to the opposite
+                underGround_layer.GetComponent<Renderer>().enabled = underGround_layer.GetComponent<Renderer>(); //sets underground layer to visible 
                 Debug.Log("switch to underground");
             }
-            else if (underGround_layer.activeSelf)
+            else if (underGround_layer.GetComponent<Renderer>().enabled)
             {
-                ground_layer.SetActive(true);
-                underGround_layer.SetActive(false);
+                ground_layer.GetComponent<Renderer>().enabled = ground_layer.GetComponent<Renderer>(); //sets ground layer to visible 
+                underGround_layer.GetComponent<Renderer>().enabled = !(underGround_layer.GetComponent<Renderer>().enabled); //sets underground layer to visible and then makes it equal to the opposite
                 Debug.Log("switch to ground");
             }
         }
