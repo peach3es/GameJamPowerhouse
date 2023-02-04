@@ -12,6 +12,7 @@ public class mole : MonoBehaviour
 
     [SerializeField] float launchSpeed;
     [SerializeField] float maxLaunchSpeed;
+    public Animator animator;
 
     public bool canSwitchLayers;
     public bool canSlingshot;
@@ -32,24 +33,33 @@ public class mole : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+
+        animator.SetBool("right", false);
+        animator.SetBool("left", false);
+        animator.SetBool("front", false);
+        animator.SetBool("back", false);
         // Underground, move with wasd
         if (transform.position.z == -0.1f) 
         { 
             // ** Underground movement **
             if (Input.GetKey("w"))
             {
+                animator.SetBool("back", true);
                 moleBody.AddForce(new Vector2(0,movementSpeed), (ForceMode2D)ForceMode.VelocityChange);
             }
             if(Input.GetKey("s"))
             {
+                animator.SetBool("front", true);
                 moleBody.AddForce(new Vector2(0, -movementSpeed), (ForceMode2D)ForceMode.VelocityChange);
             }
             if (Input.GetKey("a"))
             {
+                animator.SetBool("left", true);
                 moleBody.AddForce(new Vector2(-movementSpeed, 0), (ForceMode2D)ForceMode.VelocityChange);
             }
             if (Input.GetKey("d"))
             {
+                animator.SetBool("right",true);
                 moleBody.AddForce(new Vector2(movementSpeed, 0), (ForceMode2D)ForceMode.VelocityChange);
             }
 

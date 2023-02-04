@@ -4668,37 +4668,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!1 &1439198279
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1439198280}
-  m_Layer: 0
-  m_Name: animationControl
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &1439198280
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1439198279}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.079065695, y: 0.53260845, z: -9.370481}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 4
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1639427762
 GameObject:
   m_ObjectHideFlags: 0
@@ -5178,6 +5147,7 @@ MonoBehaviour:
   - {fileID: 8300000, guid: 33e4456cd86a3954ea80841307f24472, type: 3}
   launchSpeed: 15
   maxLaunchSpeed: 150
+  animator: {fileID: 1698704928}
   canSwitchLayers: 0
   canSlingshot: 0
 --- !u!82 &1698704925
@@ -5398,7 +5368,7 @@ Animator:
   m_GameObject: {fileID: 1698704919}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: fcf749515fd65f748ad51e021810dc67, type: 2}
+  m_Controller: {fileID: 9100000, guid: ce76a0600acd47e4688b0880bf759096, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
