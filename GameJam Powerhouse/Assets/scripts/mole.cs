@@ -62,6 +62,7 @@ public class mole : MonoBehaviour
             // Release
             if (Input.GetMouseButtonUp(0))
             {
+                gameObject.GetComponent<AudioSource>().Play();
                 Vector2 mousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
                 Debug.Log("Mouse pos:" + mousePos);
 
