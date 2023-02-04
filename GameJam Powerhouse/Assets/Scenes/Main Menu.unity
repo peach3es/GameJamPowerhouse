@@ -530,7 +530,7 @@ RectTransform:
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 4.6072, y: 0}
+  m_SizeDelta: {x: 4.6071777, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &412084104
 MonoBehaviour:
@@ -664,7 +664,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: -5.3}
+  m_AnchoredPosition: {x: 0, y: -5.299988}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &883645660
@@ -687,7 +687,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 0}
+  m_Sprite: {fileID: 21300000, guid: 465ef5098094fe7469616fca56973b60, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -715,6 +715,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1176924955}
   - component: {fileID: 1176924956}
+  - component: {fileID: 1176924957}
   m_Layer: 5
   m_Name: MainMenu
   m_TagString: Untagged
@@ -758,6 +759,26 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a207b75e4759a473fb077bfe18d947b0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!95 &1176924957
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1176924954}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 2fe897e63461cb44597401a85195364d, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
 --- !u!1 &1312871079
 GameObject:
   m_ObjectHideFlags: 0
@@ -1256,6 +1277,7 @@ GameObject:
   - component: {fileID: 1690597892}
   - component: {fileID: 1690597894}
   - component: {fileID: 1690597893}
+  - component: {fileID: 1690597895}
   m_Layer: 5
   m_Name: GameTitle
   m_TagString: Untagged
@@ -1303,7 +1325,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Main Menu
+  m_text: Mole Ester
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 1966d0ffdf62d4294b783ec71aa54220, type: 2}
   m_sharedMaterial: {fileID: 7250668507151232472, guid: 1966d0ffdf62d4294b783ec71aa54220, type: 2}
@@ -1380,6 +1402,26 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1690597891}
   m_CullTransparentMesh: 1
+--- !u!95 &1690597895
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1690597891}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 40c0a452f9617774aacc56ad3dd619fb, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
 --- !u!1 &1905394461
 GameObject:
   m_ObjectHideFlags: 0
