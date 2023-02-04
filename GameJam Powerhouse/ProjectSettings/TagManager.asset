@@ -6,6 +6,7 @@ TagManager:
   tags:
   - hole
   - seed_hole
+  - concrete
   layers:
   - Default
   - TransparentFX

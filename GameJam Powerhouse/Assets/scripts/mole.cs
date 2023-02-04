@@ -12,18 +12,20 @@ public class mole : MonoBehaviour
     [SerializeField] float maxLaunchSpeed;
 
     public bool canSwitchLayers;
+    public bool canSlingshot;
 
     private Vector2 playerPosBeforeSlingshot;
 
     // Start is called before the first frame update
     void Start()
     {
-
+        canSlingshot = true;
     }
 
     // Update is called once per frame
     void Update()
     {
+        // Underground, move with wasd
         if (transform.position.z == -0.1f) 
         { 
             // ** Underground movement **
@@ -47,8 +49,8 @@ public class mole : MonoBehaviour
         }
 
         // ** Slingshot **
-
-        else if (transform.position.z == -1.1f)
+        // Above ground, can slingshot
+        else if (transform.position.z == -1.1f && canSlingshot)
         {
             // Holding down
             if (Input.GetMouseButtonDown(0)) 
@@ -94,10 +96,15 @@ public class mole : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collider)
     {
-        Debug.Log("collid with hole");
         if (collider.gameObject.CompareTag("hole"))
         {
+            Debug.Log("collid with hole");
             canSwitchLayers = true;
+        }
+        else if (collider.gameObject.CompareTag("concrete"))
+        {
+            Debug.Log("collid with concrete");
+            canSlingshot = false;
         }
     }
 
@@ -106,6 +113,10 @@ public class mole : MonoBehaviour
         if (collider.gameObject.CompareTag("hole"))
         {
             canSwitchLayers = false;
+        }
+        else if (collider.gameObject.CompareTag("concrete"))
+        {
+            canSlingshot = true;
         }
     }
 }
