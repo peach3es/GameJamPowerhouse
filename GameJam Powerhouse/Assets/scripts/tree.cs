@@ -38,8 +38,10 @@ public class tree : MonoBehaviour
     {
         // Wait
         yield return new WaitForSeconds(0.5f);
-        
+
         // Pull
-        mole.GetComponent<Rigidbody2D>().AddForce(pullVector * pullPower, ForceMode2D.Force);
+        mole.GetComponent<Rigidbody2D>().AddForce(pullVector * pullPower, ForceMode2D.Impulse);
+
+        mole.GetComponent<mole>().canSlingshot = true;
     }
 }
