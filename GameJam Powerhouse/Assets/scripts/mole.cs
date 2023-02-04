@@ -11,6 +11,8 @@ public class mole : MonoBehaviour
     [SerializeField] float launchSpeed;
     [SerializeField] float maxLaunchSpeed;
 
+    public bool canSwitchLayers;
+
     private Vector2 playerPosBeforeSlingshot;
 
     // Start is called before the first frame update
@@ -22,55 +24,88 @@ public class mole : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        // ** Underground movement **
-        if (Input.GetKey("w"))
-        {
-            Debug.Log("w pressed");
-            moleBody.AddForce(new Vector2(0,movementSpeed), (ForceMode2D)ForceMode.VelocityChange);
-        }
-        if(Input.GetKey("s"))
-        {
-            moleBody.AddForce(new Vector2(0, -movementSpeed), (ForceMode2D)ForceMode.VelocityChange);
-        }
-        if (Input.GetKey("a"))
-        {
-            moleBody.AddForce(new Vector2(-movementSpeed, 0), (ForceMode2D)ForceMode.VelocityChange);
-        }
-        if (Input.GetKey("d"))
-        {
-            moleBody.AddForce(new Vector2(movementSpeed, 0), (ForceMode2D)ForceMode.VelocityChange);
+        if (transform.position.z == -0.1f) 
+        { 
+            // ** Underground movement **
+            if (Input.GetKey("w"))
+            {
+                Debug.Log("w pressed");
+                moleBody.AddForce(new Vector2(0,movementSpeed), (ForceMode2D)ForceMode.VelocityChange);
+            }
+            if(Input.GetKey("s"))
+            {
+                moleBody.AddForce(new Vector2(0, -movementSpeed), (ForceMode2D)ForceMode.VelocityChange);
+            }
+            if (Input.GetKey("a"))
+            {
+                moleBody.AddForce(new Vector2(-movementSpeed, 0), (ForceMode2D)ForceMode.VelocityChange);
+            }
+            if (Input.GetKey("d"))
+            {
+                moleBody.AddForce(new Vector2(movementSpeed, 0), (ForceMode2D)ForceMode.VelocityChange);
+            }
         }
 
         // ** Slingshot **
 
-        // Holding down
-        if (Input.GetMouseButtonDown(0)) 
+        else if (transform.position.z == -1.1f)
         {
-            // Player slingshot root
-            playerPosBeforeSlingshot = moleBody.transform.position;
-
-            Debug.Log("Player pos: " + playerPosBeforeSlingshot);
-        }
-
-        // Release
-        if (Input.GetMouseButtonUp(0))
-        {
-            Vector2 mousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
-            Debug.Log("Mouse pos:" + mousePos);
-
-            Vector2 launchVector = (playerPosBeforeSlingshot - mousePos) * launchSpeed;
-
-            // Caps launch speed to max launch speed
-            if (launchVector.magnitude > maxLaunchSpeed)
+            // Holding down
+            if (Input.GetMouseButtonDown(0)) 
             {
-                launchVector.Normalize();
-                launchVector *= maxLaunchSpeed;
-                Debug.Log("normalizing to" + launchVector);
+                // Player slingshot root
+                playerPosBeforeSlingshot = moleBody.transform.position;
+
+                Debug.Log("Player pos: " + playerPosBeforeSlingshot);
             }
 
-            Debug.Log("Launch: " + launchVector);
+            // Release
+            if (Input.GetMouseButtonUp(0))
+            {
+                Vector2 mousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+                Debug.Log("Mouse pos:" + mousePos);
 
-            moleBody.AddForce(launchVector, (ForceMode2D)ForceMode.Impulse);
-        }   
+                Vector2 launchVector = (playerPosBeforeSlingshot - mousePos) * launchSpeed;
+
+                // Caps launch speed to max launch speed
+                if (launchVector.magnitude > maxLaunchSpeed)
+                {
+                    launchVector.Normalize();
+                    launchVector *= maxLaunchSpeed;
+                    Debug.Log("normalizing to" + launchVector);
+                }
+
+                Debug.Log("Launch: " + launchVector);
+
+                moleBody.AddForce(launchVector, (ForceMode2D)ForceMode.Impulse);
+            }   
+        }
+    }
+
+    void OnCollisionEnter2D(Collision2D collision)
+    {
+        Debug.Log("collid with hole");
+        if (collision.gameObject.CompareTag("hole"))
+        {
+            canSwitchLayers = true;
+        }
+    }
+
+    private void OnTriggerEnter2D(Collider2D collider)
+    {
+        Debug.Log("collid with hole");
+        if (collider.gameObject.CompareTag("hole"))
+        {
+            canSwitchLayers = true;
+        }
+    }
+
+    void OnTriggerExit2D(Collider2D collider)
+    {
+        if (collider.gameObject.CompareTag("hole"))
+        {
+            canSwitchLayers = false;
+        }
     }
 }
+
