@@ -32,18 +32,22 @@ public class mole : MonoBehaviour
             if (Input.GetKey("w"))
             {
                 Debug.Log("w pressed");
+                gameObject.GetComponents<AudioSource>()[1].Play();
                 moleBody.AddForce(new Vector2(0,movementSpeed), (ForceMode2D)ForceMode.VelocityChange);
             }
             if(Input.GetKey("s"))
             {
+                gameObject.GetComponents<AudioSource>()[1].Play();
                 moleBody.AddForce(new Vector2(0, -movementSpeed), (ForceMode2D)ForceMode.VelocityChange);
             }
             if (Input.GetKey("a"))
             {
+                gameObject.GetComponents<AudioSource>()[1].Play();
                 moleBody.AddForce(new Vector2(-movementSpeed, 0), (ForceMode2D)ForceMode.VelocityChange);
             }
             if (Input.GetKey("d"))
             {
+                gameObject.GetComponents<AudioSource>()[1].Play();
                 moleBody.AddForce(new Vector2(movementSpeed, 0), (ForceMode2D)ForceMode.VelocityChange);
             }
         }
@@ -64,7 +68,7 @@ public class mole : MonoBehaviour
             // Release
             if (Input.GetMouseButtonUp(0))
             {
-                gameObject.GetComponent<AudioSource>().Play();
+                gameObject.GetComponents<AudioSource>()[0].Play();
                 Vector2 mousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
                 Debug.Log("Mouse pos:" + mousePos);
 

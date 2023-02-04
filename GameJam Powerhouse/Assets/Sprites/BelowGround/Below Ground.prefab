@@ -232,7 +232,7 @@ Tilemap:
     m_Data: {fileID: 11400000, guid: 648fe3b602eeb364ab4b8e7892b7aec5, type: 2}
   - m_RefCount: 1
     m_Data: {fileID: 11400000, guid: 6ac9b698557be214dbe6f773eec5538b, type: 2}
-  - m_RefCount: 1
+  - m_RefCount: 2
     m_Data: {fileID: 11400000, guid: 4da34113dd30071419e0917d24a1bcfa, type: 2}
   - m_RefCount: 1
     m_Data: {fileID: 11400000, guid: 1110127ed8ee71147928c96f17f2569a, type: 2}
