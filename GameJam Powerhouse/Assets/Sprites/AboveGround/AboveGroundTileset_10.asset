@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: AboveGroundTileset_10
   m_EditorClassIdentifier: 
   m_Sprite: {fileID: -493397023, guid: 158a17366ffd4dc45a9f231075e163bf, type: 3}
-  m_Color: {r: 0.7169812, g: 0.6556079, b: 0.6046992, a: 1}
+  m_Color: {r: 0.509434, g: 0.44155365, b: 0.38640088, a: 1}
   m_Transform:
     e00: 1
     e01: 0
