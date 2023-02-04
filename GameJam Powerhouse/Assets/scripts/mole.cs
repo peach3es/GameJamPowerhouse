@@ -140,6 +140,16 @@ public class mole : MonoBehaviour
         }
     }
 
+    private void OnTriggerStay2D(Collider2D collider)
+    {
+        
+        if (collider.gameObject.CompareTag("concrete"))
+        {
+            Debug.Log("collid with concrete");
+            canSlingshot = false;
+        }
+    }
+
     void OnTriggerExit2D(Collider2D collider)
     {
         if (collider.gameObject.CompareTag("hole"))
