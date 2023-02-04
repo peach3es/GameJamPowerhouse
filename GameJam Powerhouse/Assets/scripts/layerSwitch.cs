@@ -25,6 +25,8 @@ public class layerSwitch : MonoBehaviour
                 mole.transform.position = new Vector3(mole.transform.position.x, mole.transform.position.y, -0.1f);
                 Debug.Log("switch to underground! mole z: " + mole.transform.position);
             }
+            
+            // Underground visible -> Change to ground
             else if (underGround_layer.GetComponent<Renderer>().enabled)
             {
                 ground_layer.GetComponent<Renderer>().enabled = ground_layer.GetComponent<Renderer>(); //sets ground layer to visible 
