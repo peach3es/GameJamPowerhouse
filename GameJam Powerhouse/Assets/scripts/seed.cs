@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class seed : MonoBehaviour
 {
+
+    [SerializeField] Renderer renderer;
     // Start is called before the first frame update
     void Start()
     {
@@ -21,6 +23,7 @@ public class seed : MonoBehaviour
 
         if (collider.gameObject.CompareTag("seed_hole"))
         {
+            renderer.enabled = false;
             Debug.Log("Level Complete!");
         }
     }
