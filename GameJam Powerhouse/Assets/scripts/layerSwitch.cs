@@ -17,16 +17,25 @@ public class layerSwitch : MonoBehaviour
     {
         if (Input.GetKeyDown("space"))
         {
-            if (ground_layer.GetComponent<Renderer>()) //Check if ground or underground is visible
+            // Ground visible -> change to underground
+            if (ground_layer.GetComponent<Renderer>().enabled) 
             {
-                ground_layer.GetComponent<Renderer>().enabled = !(ground_layer.GetComponent<Renderer>().enabled); //sets ground layer to visible and then makes it equal to the opposite
-                underGround_layer.GetComponent<Renderer>().enabled = underGround_layer.GetComponent<Renderer>(); //sets underground layer to visible 
+                //sets ground layer to visible and then makes it equal to the opposite
+                ground_layer.GetComponent<Renderer>().enabled = !(ground_layer.GetComponent<Renderer>().enabled); 
+                
+                //sets underground layer to visible 
+                underGround_layer.GetComponent<Renderer>().enabled = underGround_layer.GetComponent<Renderer>(); 
                 Debug.Log("switch to underground");
             }
+            
+            // Underground visible -> Change to ground
             else if (underGround_layer.GetComponent<Renderer>().enabled)
             {
-                ground_layer.GetComponent<Renderer>().enabled = ground_layer.GetComponent<Renderer>(); //sets ground layer to visible 
-                underGround_layer.GetComponent<Renderer>().enabled = !(underGround_layer.GetComponent<Renderer>().enabled); //sets underground layer to visible and then makes it equal to the opposite
+                //sets ground layer to visible 
+                ground_layer.GetComponent<Renderer>().enabled = ground_layer.GetComponent<Renderer>(); 
+                
+                //sets underground layer to visible and then makes it equal to the opposite
+                underGround_layer.GetComponent<Renderer>().enabled = !(underGround_layer.GetComponent<Renderer>().enabled); 
                 Debug.Log("switch to ground");
             }
         }
