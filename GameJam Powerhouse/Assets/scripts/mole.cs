@@ -38,7 +38,6 @@ public class mole : MonoBehaviour
             // ** Underground movement **
             if (Input.GetKey("w"))
             {
-                Debug.Log("w pressed");
                 moleBody.AddForce(new Vector2(0,movementSpeed), (ForceMode2D)ForceMode.VelocityChange);
             }
             if(Input.GetKey("s"))
@@ -56,7 +55,6 @@ public class mole : MonoBehaviour
 
             // ** Digging sound
 
-            Debug.Log(moleBody.velocity.magnitude);
             // Moving, play sound if not playing
             if (moleBody.velocity.magnitude > 0.1)
             {
