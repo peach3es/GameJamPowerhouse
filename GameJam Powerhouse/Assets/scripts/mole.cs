@@ -6,6 +6,8 @@ public class mole : MonoBehaviour
 {
     [SerializeField] Rigidbody2D moleBody;
     [SerializeField] int movementSpeed;
+
+    [SerializeField] AudioClip[] diggingSounds;
     
 
     [SerializeField] float launchSpeed;
@@ -58,10 +60,15 @@ public class mole : MonoBehaviour
             // Moving, play sound if not playing
             if (moleBody.velocity.magnitude > 0.1)
             {
-                if (!digging.isPlaying) digging.Play();
+                if (!digging.isPlaying) {
+                    int clipIndex = Random.Range(0, 5);
+                    digging.PlayOneShot(diggingSounds[clipIndex]);  
+                }
             } else
             {
-                if (digging.isPlaying) digging.Stop();
+                if (digging.isPlaying) {
+                    digging.Stop();
+                }
             }
         }
 

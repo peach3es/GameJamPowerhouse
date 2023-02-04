@@ -5025,6 +5025,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   moleBody: {fileID: 1698704920}
   movementSpeed: 1
+  diggingSounds:
+  - {fileID: 8300000, guid: 4e228803e32fa5149a962199c1ef758c, type: 3}
+  - {fileID: 8300000, guid: 3533f86573866b340a6b85204e8b4f6e, type: 3}
+  - {fileID: 8300000, guid: 757d1087dc78eec4f930271fda1774f2, type: 3}
+  - {fileID: 8300000, guid: 61b288b0caa7fbf45b224b9c0b53a4a7, type: 3}
+  - {fileID: 8300000, guid: 33e4456cd86a3954ea80841307f24472, type: 3}
   launchSpeed: 15
   maxLaunchSpeed: 150
   canSwitchLayers: 0
