@@ -247,18 +247,6 @@ PrefabInstance:
       propertyPath: m_Enabled
       value: 1
       objectReference: {fileID: 0}
-    - target: {fileID: 1445645751949364026, guid: c22d211480d9682439e21dc1f6a2a124, type: 3}
-      propertyPath: mole
-      value: 
-      objectReference: {fileID: 234772117}
-    - target: {fileID: 1445645751949364026, guid: c22d211480d9682439e21dc1f6a2a124, type: 3}
-      propertyPath: seed
-      value: 
-      objectReference: {fileID: 1183569896}
-    - target: {fileID: 1445645751949364026, guid: c22d211480d9682439e21dc1f6a2a124, type: 3}
-      propertyPath: seedHole
-      value: 
-      objectReference: {fileID: 1054740455}
     - target: {fileID: 1445645751949364027, guid: c22d211480d9682439e21dc1f6a2a124, type: 3}
       propertyPath: m_RootOrder
       value: 1
@@ -303,10 +291,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 1445645751949364027, guid: c22d211480d9682439e21dc1f6a2a124, type: 3}
-      propertyPath: m_ConstrainProportionsScale
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 1445645751949364028, guid: c22d211480d9682439e21dc1f6a2a124, type: 3}
       propertyPath: m_Name
       value: level
@@ -327,10 +311,6 @@ PrefabInstance:
       propertyPath: m_RootOrder
       value: 2
       objectReference: {fileID: 0}
-    - target: {fileID: 4248009988866038593, guid: c22d211480d9682439e21dc1f6a2a124, type: 3}
-      propertyPath: renderer
-      value: 
-      objectReference: {fileID: 1183569900}
     - target: {fileID: 5216241284993586644, guid: c22d211480d9682439e21dc1f6a2a124, type: 3}
       propertyPath: m_RootOrder
       value: 2
@@ -2997,11 +2977,6 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.09388971, y: 1.108336}
   m_EdgeRadius: 0
---- !u!1 &1054740455 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 286204075467857972, guid: c22d211480d9682439e21dc1f6a2a124, type: 3}
-  m_PrefabInstance: {fileID: 138939971}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1153560078
 GameObject:
   m_ObjectHideFlags: 0
@@ -3118,16 +3093,6 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.2460267, y: 1.108336}
   m_EdgeRadius: 0
---- !u!1 &1183569896 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 4248009988866038596, guid: c22d211480d9682439e21dc1f6a2a124, type: 3}
-  m_PrefabInstance: {fileID: 138939971}
-  m_PrefabAsset: {fileID: 0}
---- !u!212 &1183569900 stripped
-SpriteRenderer:
-  m_CorrespondingSourceObject: {fileID: 4248009988866038597, guid: c22d211480d9682439e21dc1f6a2a124, type: 3}
-  m_PrefabInstance: {fileID: 138939971}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1238825018
 GameObject:
   m_ObjectHideFlags: 0
