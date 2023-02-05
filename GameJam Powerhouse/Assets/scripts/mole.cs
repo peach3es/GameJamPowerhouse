@@ -12,7 +12,9 @@ public class mole : MonoBehaviour
 
     [SerializeField] float launchSpeed;
     [SerializeField] float maxLaunchSpeed;
+
     [SerializeField] GameObject tailSlingshot;
+    [SerializeField] GameObject tail;
 
     [SerializeField] Sprite idleSprite;
     [SerializeField] Sprite flyingSprite;
@@ -22,6 +24,10 @@ public class mole : MonoBehaviour
     public Animator animator;
 
     private SpriteRenderer spriteRenderer;
+
+    private Animator tailAnimator;
+
+    private SpriteRenderer tailSpriteRenderer;
 
     public bool canSwitchLayers;
     public bool canSlingshot;
@@ -38,6 +44,8 @@ public class mole : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        tailAnimator = tail.GetComponent<Animator>();
+        tailSpriteRenderer = tail.GetComponent<SpriteRenderer>();
         canSlingshot = true;
         spriteRenderer = GetComponent<SpriteRenderer>();
         launching = gameObject.GetComponents<AudioSource>()[0];
@@ -56,6 +64,20 @@ public class mole : MonoBehaviour
             animator.SetBool("left", false);
             animator.SetBool("front", false);
             animator.SetBool("back", false);
+
+            tailAnimator.SetBool("right", false);
+            tailAnimator.SetBool("left", false);
+            tailAnimator.SetBool("front", false);
+            tailAnimator.SetBool("back", false);
+            // tail.transform.position = new Vector3(tail.transform.position.x, tail.transform.position.y, 0);
+            tail.transform.localPosition = new Vector3(tail.transform.localPosition.x, tail.transform.localPosition.y, 0.015f);
+
+            tailSpriteRenderer.enabled = true;
+        }
+        // Aiming slingshot, make tail invisible
+        else
+        {
+            tailSpriteRenderer.enabled = false;
         }
 
         // Underground, move with wasd
@@ -65,22 +87,32 @@ public class mole : MonoBehaviour
             if (Input.GetKey("w"))
             {
                 animator.SetBool("back", true);
+                tailAnimator.SetBool("back", true);
+                tail.transform.localPosition = new Vector3(tail.transform.localPosition.x, tail.transform.localPosition.y, -0.01f);
                 moleBody.AddForce(new Vector2(0,movementSpeed), (ForceMode2D)ForceMode.VelocityChange);
             }
             if(Input.GetKey("s"))
             {
                 animator.SetBool("front", true);
+                tailAnimator.SetBool("front", true);
                 moleBody.AddForce(new Vector2(0, -movementSpeed), (ForceMode2D)ForceMode.VelocityChange);
             }
             if (Input.GetKey("a"))
             {
                 animator.SetBool("left", true);
+                tailAnimator.SetBool("left", true);
                 moleBody.AddForce(new Vector2(-movementSpeed, 0), (ForceMode2D)ForceMode.VelocityChange);
             }
             if (Input.GetKey("d"))
             {
                 animator.SetBool("right",true);
+                tailAnimator.SetBool("right", true);
                 moleBody.AddForce(new Vector2(movementSpeed, 0), (ForceMode2D)ForceMode.VelocityChange);
+            }
+            if (Input.GetKeyUp("w"))
+            {
+                tail.transform.localPosition = new Vector3(tail.transform.localPosition.x, tail.transform.localPosition.y, 0.015f);
+                // tail.transform.position = new Vector3(tail.transform.position.x, tail.transform.position.y, 0);
             }
 
             // ** Digging sound
