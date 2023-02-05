@@ -133,7 +133,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ground_layer: {fileID: 1445645750790461307}
   underGround_layer: {fileID: 1445645752074248613}
-  mole: {fileID: 0}
+  mole: {fileID: 800498053697330302, guid: 51795739668642c40a89f4cd501387b7, type: 3}
   seed: {fileID: 4248009988866038596}
   seedHole: {fileID: 286204075467857972}
 --- !u!1 &1445645752074248613
