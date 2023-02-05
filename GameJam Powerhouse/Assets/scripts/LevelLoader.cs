@@ -6,21 +6,44 @@ using UnityEngine.SceneManagement;
 public class LevelLoader : MonoBehaviour
 {
     [SerializeField] GameObject sceneTransitionObject;
+    [SerializeField] GameObject pauseMenu;
     public Animator transition;
     public float transitionTime = 4f;
+
+    public void TogglePause()
+    {
+        // Pause menu open, close it
+        if (pauseMenu.activeInHierarchy)
+        {
+            pauseMenu.SetActive(false);
+        }
+        // Pause menu closed, open it
+        else 
+        {
+            pauseMenu.SetActive(true);
+        }
+    }
+
+    public void ReloadScene()
+    {
+        // Not on main menu or intro, reload on "r" click
+        int activeScene = SceneManager.GetActiveScene().buildIndex;
+        if (activeScene > 1)
+        {
+            StartCoroutine(LoadLevel(activeScene));
+        }
+    }
 
     // Update is called once per frame
     void Update()
     {
-        
+        if (Input.GetKeyDown(KeyCode.Escape))
+        {
+            TogglePause();
+        }
         if (Input.GetKeyDown("r"))
         {
-            // Not on main menu or intro, reload on "r" click
-            int activeScene = SceneManager.GetActiveScene().buildIndex;
-            if (activeScene > 1)
-            {
-                StartCoroutine(LoadLevel(activeScene));
-            }
+            ReloadScene();
         }
     }
 
