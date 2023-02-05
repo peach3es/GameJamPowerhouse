@@ -27,9 +27,9 @@ public class LevelLoader : MonoBehaviour
         sceneTransitionObject.SetActive(true);
         transition.SetTrigger("StartTransition");
 
+        SceneManager.LoadScene(levelIndex);
         yield return new WaitForSeconds(transitionTime);
 
         sceneTransitionObject.SetActive(false);
-        SceneManager.LoadScene(levelIndex);
     }
 }
