@@ -24,7 +24,7 @@ MonoBehaviour:
   m_MinSize: {x: 300, y: 200}
   m_MaxSize: {x: 24288, y: 16192}
   vertical: 0
-  controlID: 32479
+  controlID: 53013
 --- !u!114 &2
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -53,8 +53,10 @@ MonoBehaviour:
   m_OverlayCanvas:
     m_LastAppliedPresetName: Default
     m_SaveData: []
-  m_SerializedViewNames: []
-  m_SerializedViewValues: []
+  m_SerializedViewNames:
+  - UnityEditor.DeviceSimulation.SimulatorWindow
+  m_SerializedViewValues:
+  - C:\Users\adamo\Documents\GitHub\GameJamPowerhouse\GameJam Powerhouse\Library\PlayModeViewStates\d75295f7804b8c74f91c959b0e342b3a
   m_PlayModeViewName: GameView
   m_ShowGizmos: 0
   m_TargetDisplay: 0
@@ -141,7 +143,7 @@ MonoBehaviour:
   m_MinSize: {x: 200, y: 200}
   m_MaxSize: {x: 16192, y: 16192}
   vertical: 1
-  controlID: 32431
+  controlID: 53014
 --- !u!114 &4
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -166,7 +168,7 @@ MonoBehaviour:
   m_MinSize: {x: 200, y: 100}
   m_MaxSize: {x: 16192, y: 8096}
   vertical: 0
-  controlID: 32408
+  controlID: 53015
 --- !u!114 &5
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -226,7 +228,7 @@ MonoBehaviour:
       scrollPos: {x: 0, y: 0}
       m_SelectedIDs: 
       m_LastClickedID: 0
-      m_ExpandedIDs: 0628ffffdc29ffffc22bfffff82efffffe2effff042fffff0e2fffff2231ffffec31ffff103dfffff43dffff3e3efffffc3effffa23fffff7643ffffd643ffff2644ffff6444ffffee44ffff8e45ffff0e46ffffc648ffffca48ffffcc48ffff7e49ffffbcceffff3ed0ffff88d3ffff2cd4ffffb0d5ffffdce7ffff10ebffffa4ecffff3efaffff2cfbffff765000007c50000086500000b45000008069000090690000826a00008e6a0000926a0000ac6a0000487200004e7200005472000058720000647200006a720000dc8d000084940000c49b0000
+      m_ExpandedIDs: 1809ffff1c09ffff2209ffff2809ffff3209ffff3c0bffffd60cffff9e0dffff7a12ffff7e12ffff8412ffff8a12ffffb412ffff1a13ffffe613ffff1016ffff3a16ffff7e19ffff8c19ffff9c19ffff581affff061cffff101cfffffc1cffffb01fffffda1fffff2423ffff2e23ffff0628ffffdc29ffffc22bfffff82efffffe2effff042fffff0e2fffff2231ffffec31ffff103dfffff43dffff3e3efffffc3effffa23fffff7643ffffd643ffff2644ffff6444ffffee44ffff8e45ffff0e46ffffc648ffffca48ffffcc48ffff7e49ffffbcceffff3ed0ffff88d3ffff2cd4ffffb0d5ffffdce7ffff10ebffffa4ecffff3efaffff2cfbffff765000007c50000086500000b45000008069000090690000826a00008e6a0000926a0000ac6a0000487200004e7200005472000058720000647200006a720000dc8d000084940000c49b0000dcac0000
       m_RenameOverlay:
         m_UserAcceptedRename: 0
         m_Name: 
@@ -540,7 +542,7 @@ MonoBehaviour:
       containerId: overlay-toolbar__top
       floating: 0
       collapsed: 0
-      displayed: 0
+      displayed: 1
       snapOffset: {x: 0, y: 24.8}
       snapOffsetDelta: {x: 0, y: 0}
       snapCorner: 0
@@ -557,9 +559,9 @@ MonoBehaviour:
   m_PlayAudio: 0
   m_AudioPlay: 0
   m_Position:
-    m_Target: {x: -2.8560524, y: -0.18115056, z: -5.81927}
+    m_Target: {x: 2.2999291, y: 1.181981, z: -2.143568}
     speed: 2
-    m_Value: {x: -2.8560524, y: -0.18115056, z: -5.81927}
+    m_Value: {x: 2.2999291, y: 1.181981, z: -2.143568}
   m_RenderMode: 0
   m_CameraMode:
     drawMode: 0
@@ -610,9 +612,9 @@ MonoBehaviour:
     speed: 2
     m_Value: {x: 0, y: 0, z: 0, w: 1}
   m_Size:
-    m_Target: 5.9997396
+    m_Target: 5.6137314
     speed: 2
-    m_Value: 5.9997396
+    m_Value: 5.6137314
   m_Ortho:
     m_Target: 1
     speed: 2
@@ -705,21 +707,21 @@ MonoBehaviour:
     m_SkipHidden: 0
     m_SearchArea: 1
     m_Folders:
-    - Assets/Scenes
+    - Assets/prefabs
     m_Globs: []
     m_OriginalText: 
   m_ViewMode: 1
   m_StartGridSize: 64
   m_LastFolders:
-  - Assets/Scenes
+  - Assets/prefabs
   m_LastFoldersGridSize: -1
   m_LastProjectPath: C:\Users\adamo\Documents\GitHub\GameJamPowerhouse\GameJam Powerhouse
   m_LockTracker:
     m_IsLocked: 0
   m_FolderTreeState:
-    scrollPos: {x: 0, y: 0}
-    m_SelectedIDs: d0510000
-    m_LastClickedID: 20944
+    scrollPos: {x: 0, y: 64}
+    m_SelectedIDs: ce510000
+    m_LastClickedID: 20942
     m_ExpandedIDs: 000000005450000000ca9a3bffffff7f
     m_RenameOverlay:
       m_UserAcceptedRename: 0
@@ -773,10 +775,10 @@ MonoBehaviour:
       m_Icon: {fileID: 0}
       m_ResourceFile: 
   m_ListAreaState:
-    m_SelectedInstanceIDs: a48b0000
-    m_LastClickedInstanceID: 35748
+    m_SelectedInstanceIDs: 44ecfeff
+    m_LastClickedInstanceID: -70588
     m_HadKeyboardFocusLastEvent: 0
-    m_ExpandedInstanceIDs: c6230000da680000206800007862000000000000a0500000966a00004e980000c6510000d474000060560000
+    m_ExpandedInstanceIDs: c6230000da680000206800007862000000000000a0500000966a00004e980000c6510000d4740000605600003c51000008ae000004ae0000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -893,7 +895,7 @@ MonoBehaviour:
     m_CachedPref: -160
     m_ControlHash: -371814159
     m_PrefName: Preview_InspectorPreview
-  m_LastInspectedObjectInstanceID: 35748
+  m_LastInspectedObjectInstanceID: -70588
   m_LastVerticalScrollValue: 0
   m_GlobalObjectId: 
   m_InspectorMode: 0

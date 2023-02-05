@@ -9,6 +9,7 @@ public class layerSwitch : MonoBehaviour
     [SerializeField] GameObject mole;
     [SerializeField] GameObject seed;
     [SerializeField] GameObject seedHole;
+    [SerializeField] GameObject[] objectsToSwitch;
 
     // Start is called before the first frame update
     void Start()
@@ -31,6 +32,10 @@ public class layerSwitch : MonoBehaviour
                 // Disable sprites on other layer
                 seed.GetComponent<Renderer>().enabled = false;
                 seedHole.GetComponent<Renderer>().enabled = false;
+                foreach (GameObject obj in objectsToSwitch)
+                {
+                    obj.GetComponent<Renderer>().enabled = false;
+                }
                 foreach (Renderer renderer in underGround_layer.GetComponentsInChildren<Renderer>())
                 {
                     renderer.enabled = true;
@@ -55,6 +60,10 @@ public class layerSwitch : MonoBehaviour
 
                 seedHole.GetComponent<Renderer>().enabled = true;
                 seed.GetComponent<Renderer>().enabled = true;
+                foreach (GameObject obj in objectsToSwitch)
+                {
+                    obj.GetComponent<Renderer>().enabled = true;
+                }
                 foreach (Renderer renderer in underGround_layer.GetComponentsInChildren<Renderer>())
                 {
                     renderer.enabled = false;
