@@ -9,7 +9,7 @@ public class BackScript : MonoBehaviour
 
    public void SwitchScene(string sceneName)
    {
-    SceneManager.LoadScene(sceneName);
+      SceneManager.LoadScene(sceneName);
    }
 }
 
