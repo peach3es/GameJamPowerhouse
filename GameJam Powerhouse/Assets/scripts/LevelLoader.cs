@@ -12,6 +12,7 @@ public class LevelLoader : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        
         if (Input.GetKeyDown("r"))
         {
             // Not on main menu or intro, reload on "r" click
