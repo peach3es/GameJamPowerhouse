@@ -5,6 +5,7 @@ using UnityEngine.SceneManagement;
 
 public class LevelLoader : MonoBehaviour
 {
+    [SerializeField] GameObject sceneTransitionObject;
     public Animator transition;
     public float transitionTime = 4f;
 
@@ -21,10 +22,14 @@ public class LevelLoader : MonoBehaviour
 
     IEnumerator LoadLevel(int levelIndex)
     {
-        transition.SetTrigger("Start");
+        Debug.Log(levelIndex);
 
-        yield return new WaitForSeconds(transitionTime);
+        sceneTransitionObject.SetActive(true);
+        transition.SetTrigger("StartTransition");
 
         SceneManager.LoadScene(levelIndex);
+        yield return new WaitForSeconds(transitionTime);
+
+        sceneTransitionObject.SetActive(false);
     }
 }
