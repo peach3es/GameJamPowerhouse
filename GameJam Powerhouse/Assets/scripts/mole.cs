@@ -12,6 +12,10 @@ public class mole : MonoBehaviour
 
     [SerializeField] float launchSpeed;
     [SerializeField] float maxLaunchSpeed;
+    [SerializeField] GameObject tailSlingshot;
+
+    // private SpriteRenderer tailSlingshotRenderer;
+
     public Animator animator;
 
     public bool canSwitchLayers;
@@ -24,12 +28,16 @@ public class mole : MonoBehaviour
     private AudioSource launching;
     private AudioSource digging;
 
+    private LineRenderer vineSlingshot;
+
     // Start is called before the first frame update
     void Start()
     {
         canSlingshot = true;
         launching = gameObject.GetComponents<AudioSource>()[0];
         digging = gameObject.GetComponents<AudioSource>()[1];
+        vineSlingshot = tailSlingshot.GetComponent<LineRenderer>();
+        // tailSlingshotRenderer = tailSlingshot.GetComponent<SpriteRenderer>();
     }
 
     // Update is called once per frame
@@ -97,6 +105,10 @@ public class mole : MonoBehaviour
                 playerPosBeforeSlingshot = moleBody.transform.position;
 
                 isAimingSlingshot = true;
+
+                // tailSlingshotRenderer.enabled = true;
+
+                vineSlingshot.enabled = true;
             }
             // Holding down
             if (Input.GetMouseButton(0))
@@ -106,6 +118,13 @@ public class mole : MonoBehaviour
                 Vector2 launchVector = (playerPosBeforeSlingshot - mousePos) * launchSpeed;
 
                 lookInThrownDirection(launchVector);
+
+                vineSlingshot.SetPosition(0, tailSlingshot.transform.position);
+                vineSlingshot.SetPosition(1, mousePos);
+
+                // tailSlingshot.transform.LookAt(mousePos);
+                // tailSlingshot.transform.Rotate(new Vector3(0,90,90));
+                // tailSlingshotRenderer.size = new Vector2(tailSlingshotRenderer.size.x, Vector3.Distance(tailSlingshot.transform.position, mousePos));
             }
             // Release
             if (Input.GetMouseButtonUp(0))
@@ -116,6 +135,10 @@ public class mole : MonoBehaviour
                 Vector2 launchVector = (playerPosBeforeSlingshot - mousePos) * launchSpeed;
 
                 lookInThrownDirection(launchVector);
+
+                // tailSlingshotRenderer.enabled = false;
+
+                vineSlingshot.enabled = false;
 
                 // Caps launch speed to max launch speed
                 if (launchVector.magnitude > maxLaunchSpeed)
