@@ -48,9 +48,6 @@ public class tree : MonoBehaviour
         {
             // Wait before pulling
             StartCoroutine(pullWithDelay());
-
-            // lineRenderer.SetPosition(1, treePos);
-            // lineRenderer.SetPosition(0, mole.transform.position);
         }
 
         if (approaching)
@@ -61,8 +58,8 @@ public class tree : MonoBehaviour
 
         if (pulling)
         {
-            lineRenderer.SetPosition(0, mole.transform.position);
-            lineRenderer.SetPosition(1, treePos);
+            lineRenderer.SetPosition(1, mole.transform.position);
+            lineRenderer.SetPosition(0, treePos);
         }
     }
 
@@ -89,13 +86,14 @@ public class tree : MonoBehaviour
         // Pull
         mole.GetComponent<Rigidbody2D>().AddForce(pullVector * pullPower, ForceMode2D.Impulse);
 
+        // Finished approaching, pull vine with mole as it moves
         approaching = false;
         approachCounter = 0.0f;
 
         pulling = true;
 
-        lineRenderer.SetPosition(0, mole.transform.position);
-        lineRenderer.SetPosition(1, treePos);
+        lineRenderer.SetPosition(1, mole.transform.position);
+        lineRenderer.SetPosition(0, treePos);
 
         distanceJoint.connectedAnchor = mole.transform.position;
         distanceJoint.enabled = true;
@@ -109,8 +107,5 @@ public class tree : MonoBehaviour
         lineRenderer.enabled = false;
 
         mole.GetComponent<mole>().canSlingshot = true;
-
-        // spriteRenderer.sprite = treeSprite; 
-        // transform.localScale -= pullVector * spriteScale;
     }
 }

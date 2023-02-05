@@ -19,6 +19,8 @@ public class mole : MonoBehaviour
 
     private Vector2 playerPosBeforeSlingshot;
 
+    private bool isAimingSlingshot;
+
     private AudioSource launching;
     private AudioSource digging;
 
@@ -33,11 +35,15 @@ public class mole : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        // Reset if walking normally
+        if (!isAimingSlingshot)
+        {
+            animator.SetBool("right", false);
+            animator.SetBool("left", false);
+            animator.SetBool("front", false);
+            animator.SetBool("back", false);
+        }
 
-        animator.SetBool("right", false);
-        animator.SetBool("left", false);
-        animator.SetBool("front", false);
-        animator.SetBool("back", false);
         // Underground, move with wasd
         if (transform.position.z == -0.1f) 
         { 
@@ -84,36 +90,67 @@ public class mole : MonoBehaviour
         // Above ground, can slingshot
         else if (transform.position.z == -1.1f && canSlingshot)
         {
-            // Holding down
+            // First press down
             if (Input.GetMouseButtonDown(0)) 
             {
                 // Player slingshot root
                 playerPosBeforeSlingshot = moleBody.transform.position;
 
-                Debug.Log("Player pos: " + playerPosBeforeSlingshot);
+                isAimingSlingshot = true;
             }
+            // Holding down
+            if (Input.GetMouseButton(0))
+            {
+                Vector2 mousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
 
+                Vector2 launchVector = (playerPosBeforeSlingshot - mousePos) * launchSpeed;
+
+                lookInThrownDirection(launchVector);
+            }
             // Release
             if (Input.GetMouseButtonUp(0))
             {
                 launching.Play();
                 Vector2 mousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
-                Debug.Log("Mouse pos:" + mousePos);
 
                 Vector2 launchVector = (playerPosBeforeSlingshot - mousePos) * launchSpeed;
+
+                lookInThrownDirection(launchVector);
 
                 // Caps launch speed to max launch speed
                 if (launchVector.magnitude > maxLaunchSpeed)
                 {
                     launchVector.Normalize();
                     launchVector *= maxLaunchSpeed;
-                    Debug.Log("normalizing to" + launchVector);
                 }
 
-                Debug.Log("Launch: " + launchVector);
-
                 moleBody.AddForce(launchVector, (ForceMode2D)ForceMode.Impulse);
+
+                transform.rotation = Quaternion.identity;
             }   
+        }
+    }
+
+    private void lookInThrownDirection(Vector2 launchVector)
+    {
+        float angle = 360 - (Mathf.Atan2(launchVector.x, launchVector.y) * Mathf.Rad2Deg * Mathf.Sign(launchVector.x));
+        if (launchVector.x > 0)
+        {
+            transform.rotation = Quaternion.AngleAxis(angle, Vector3.forward);
+        }
+        else {
+            transform.rotation = Quaternion.AngleAxis(angle, Vector3.back);
+        }
+        Debug.Log("aiming with angle: " + angle);
+        if (launchVector.y > 0)
+        {
+            animator.SetBool("front", false);
+            animator.SetBool("back", true);
+        }
+        else
+        {
+            animator.SetBool("front", true);
+            animator.SetBool("back", false);
         }
     }
 
