@@ -310,7 +310,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   moleBody: {fileID: 800498053697330289}
-  movementSpeed: 1
+  movementSpeed: 2.5
   diggingSounds:
   - {fileID: 8300000, guid: 4e228803e32fa5149a962199c1ef758c, type: 3}
   - {fileID: 8300000, guid: 3533f86573866b340a6b85204e8b4f6e, type: 3}
@@ -319,6 +319,7 @@ MonoBehaviour:
   - {fileID: 8300000, guid: 33e4456cd86a3954ea80841307f24472, type: 3}
   launchSpeed: 15
   maxLaunchSpeed: 150
+  launchMultiplier: 0
   tailSlingshot: {fileID: 478309600}
   tail: {fileID: 7349880566788374437}
   idleSprite: {fileID: 21300000, guid: 9bd1462bedbe6034081bbe50d22f6ff6, type: 3}

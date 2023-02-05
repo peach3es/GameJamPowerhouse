@@ -5,13 +5,15 @@ using UnityEngine;
 public class mole : MonoBehaviour
 {
     [SerializeField] Rigidbody2D moleBody;
-    [SerializeField] int movementSpeed;
+    [SerializeField] float movementSpeed;
 
     [SerializeField] AudioClip[] diggingSounds;
     
 
     [SerializeField] float launchSpeed;
     [SerializeField] float maxLaunchSpeed;
+
+    [SerializeField] float launchMultiplier;
 
     [SerializeField] GameObject tailSlingshot;
     [SerializeField] GameObject tail;
@@ -54,8 +56,7 @@ public class mole : MonoBehaviour
         // tailSlingshotRenderer = tailSlingshot.GetComponent<SpriteRenderer>();
     }
 
-    // Update is called once per frame
-    void Update()
+    void FixedUpdate()
     {
         // Reset if walking normally
         if (!isAimingSlingshot)
@@ -95,19 +96,19 @@ public class mole : MonoBehaviour
             {
                 animator.SetBool("front", true);
                 tailAnimator.SetBool("front", true);
-                moleBody.AddForce(new Vector2(0, -movementSpeed), (ForceMode2D)ForceMode.VelocityChange);
+                moleBody.AddForce(new Vector2(0, -movementSpeed) , (ForceMode2D)ForceMode.VelocityChange);
             }
             if (Input.GetKey("a"))
             {
                 animator.SetBool("left", true);
                 tailAnimator.SetBool("left", true);
-                moleBody.AddForce(new Vector2(-movementSpeed, 0), (ForceMode2D)ForceMode.VelocityChange);
+                moleBody.AddForce(new Vector2(-movementSpeed, 0) , (ForceMode2D)ForceMode.VelocityChange);
             }
             if (Input.GetKey("d"))
             {
                 animator.SetBool("right",true);
                 tailAnimator.SetBool("right", true);
-                moleBody.AddForce(new Vector2(movementSpeed, 0), (ForceMode2D)ForceMode.VelocityChange);
+                moleBody.AddForce(new Vector2(movementSpeed, 0) , (ForceMode2D)ForceMode.VelocityChange);
             }
             if (Input.GetKeyUp("w"))
             {
@@ -131,10 +132,15 @@ public class mole : MonoBehaviour
                 }
             }
         }
+    }
 
+    // Update is called once per frame
+    void Update()
+    {
         // ** Slingshot **
         // Above ground, can slingshot
-        else if (transform.position.z == -1.1f && canSlingshot)
+        if (transform.position.z == -1.1f && canSlingshot)
+        // else if (transform.position.z == -1.1f && canSlingshot)
         {
             // First press down
             if (Input.GetMouseButtonDown(0)) 
