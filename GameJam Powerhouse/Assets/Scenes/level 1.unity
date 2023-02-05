@@ -265,7 +265,7 @@ PrefabInstance:
       objectReference: {fileID: 1499820261}
     - target: {fileID: 1445645751949364026, guid: c22d211480d9682439e21dc1f6a2a124, type: 3}
       propertyPath: objectsToSwitch.Array.size
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1445645751949364026, guid: c22d211480d9682439e21dc1f6a2a124, type: 3}
       propertyPath: objectsToSwitch.Array.data[0]

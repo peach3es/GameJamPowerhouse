@@ -144,8 +144,8 @@ CapsuleCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
-  m_Size: {x: 0.39, y: 0.62}
+  m_Offset: {x: 0, y: -0.09}
+  m_Size: {x: 0.18, y: 0.41}
   m_Direction: 0
 --- !u!232 &7953318276954286896
 DistanceJoint2D:
