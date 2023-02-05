@@ -14,9 +14,14 @@ public class mole : MonoBehaviour
     [SerializeField] float maxLaunchSpeed;
     [SerializeField] GameObject tailSlingshot;
 
+    [SerializeField] Sprite idleSprite;
+    [SerializeField] Sprite flyingSprite;
+
     // private SpriteRenderer tailSlingshotRenderer;
 
     public Animator animator;
+
+    private SpriteRenderer spriteRenderer;
 
     public bool canSwitchLayers;
     public bool canSlingshot;
@@ -34,6 +39,7 @@ public class mole : MonoBehaviour
     void Start()
     {
         canSlingshot = true;
+        spriteRenderer = GetComponent<SpriteRenderer>();
         launching = gameObject.GetComponents<AudioSource>()[0];
         digging = gameObject.GetComponents<AudioSource>()[1];
         vineSlingshot = tailSlingshot.GetComponent<LineRenderer>();
@@ -138,6 +144,12 @@ public class mole : MonoBehaviour
 
                 // tailSlingshotRenderer.enabled = false;
 
+                Debug.Log("Changing to flying sprite");
+                animator.enabled = false;
+                spriteRenderer.sprite = flyingSprite;
+
+                isAimingSlingshot = false;
+
                 vineSlingshot.enabled = false;
 
                 // Caps launch speed to max launch speed
@@ -149,7 +161,7 @@ public class mole : MonoBehaviour
 
                 moleBody.AddForce(launchVector, (ForceMode2D)ForceMode.Impulse);
 
-                transform.rotation = Quaternion.identity;
+                StartCoroutine(waitInDirection());
             }   
         }
     }
@@ -164,7 +176,7 @@ public class mole : MonoBehaviour
         else {
             transform.rotation = Quaternion.AngleAxis(angle, Vector3.back);
         }
-        Debug.Log("aiming with angle: " + angle);
+
         if (launchVector.y > 0)
         {
             animator.SetBool("front", false);
@@ -175,6 +187,15 @@ public class mole : MonoBehaviour
             animator.SetBool("front", true);
             animator.SetBool("back", false);
         }
+    }
+
+    IEnumerator waitInDirection()
+    {
+        yield return new WaitForSeconds(0.5f);
+
+        transform.rotation = Quaternion.identity;
+        spriteRenderer.sprite = idleSprite;
+        animator.enabled = true;
     }
 
     void OnCollisionEnter2D(Collision2D collision)

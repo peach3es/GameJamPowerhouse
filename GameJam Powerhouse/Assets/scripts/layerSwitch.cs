@@ -29,6 +29,8 @@ public class layerSwitch : MonoBehaviour
                 underGround_layer.GetComponent<Renderer>().enabled = underGround_layer.GetComponent<Renderer>(); //sets underground layer to visible 
                 mole.transform.position = new Vector3(mole.transform.position.x, mole.transform.position.y, -0.1f);
 
+                mole.GetComponent<Animator>().SetBool("aboveGround", false);
+                
                 // Disable sprites on other layer
                 seed.GetComponent<Renderer>().enabled = false;
                 seedHole.GetComponent<Renderer>().enabled = false;
@@ -55,6 +57,7 @@ public class layerSwitch : MonoBehaviour
                 underGround_layer.GetComponent<Renderer>().enabled = !(underGround_layer.GetComponent<Renderer>().enabled); //sets underground layer to visible and then makes it equal to the opposite
                 mole.transform.position = new Vector3(mole.transform.position.x, mole.transform.position.y, -1.1f);
 
+                mole.GetComponent<Animator>().SetBool("aboveGround", true);
                 // Disable sprites on other layer
 
 
