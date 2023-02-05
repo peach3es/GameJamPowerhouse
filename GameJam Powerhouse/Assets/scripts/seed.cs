@@ -6,6 +6,7 @@ public class seed : MonoBehaviour
 {
 
     [SerializeField] Renderer renderer;
+    [SerializeField] ParticleSystem particleSystem;
     // Start is called before the first frame update
     void Start()
     {
@@ -23,6 +24,7 @@ public class seed : MonoBehaviour
 
         if (collider.gameObject.CompareTag("seed_hole"))
         {
+            particleSystem.Play();
             renderer.enabled = false;
             Debug.Log("Level Complete!");
         }
