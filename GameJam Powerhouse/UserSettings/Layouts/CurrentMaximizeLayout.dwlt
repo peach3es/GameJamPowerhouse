@@ -23,7 +23,7 @@ MonoBehaviour:
   m_MinSize: {x: 300, y: 200}
   m_MaxSize: {x: 24288, y: 16192}
   vertical: 1
-  controlID: 65379
+  controlID: 67649
 --- !u!114 &2
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -142,7 +142,7 @@ MonoBehaviour:
   m_MinSize: {x: 300, y: 200}
   m_MaxSize: {x: 24288, y: 16192}
   vertical: 0
-  controlID: 65380
+  controlID: 67650
 --- !u!114 &4
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -167,7 +167,7 @@ MonoBehaviour:
   m_MinSize: {x: 200, y: 200}
   m_MaxSize: {x: 16192, y: 16192}
   vertical: 1
-  controlID: 65347
+  controlID: 67651
 --- !u!114 &5
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -192,7 +192,7 @@ MonoBehaviour:
   m_MinSize: {x: 200, y: 100}
   m_MaxSize: {x: 16192, y: 8096}
   vertical: 0
-  controlID: 65348
+  controlID: 67634
 --- !u!114 &6
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -212,8 +212,8 @@ MonoBehaviour:
     y: 0
     width: 245.6
     height: 438.4
-  m_MinSize: {x: 201, y: 221}
-  m_MaxSize: {x: 4001, y: 4021}
+  m_MinSize: {x: 200, y: 200}
+  m_MaxSize: {x: 4000, y: 4000}
   m_ActualView: {fileID: 7}
   m_Panes:
   - {fileID: 7}
@@ -249,10 +249,10 @@ MonoBehaviour:
     m_SaveData: []
   m_SceneHierarchy:
     m_TreeViewState:
-      scrollPos: {x: 0, y: 14.600006}
+      scrollPos: {x: 0, y: 0}
       m_SelectedIDs: 
       m_LastClickedID: 0
-      m_ExpandedIDs: 948cfeff988cfeff9e8cfeffa48cfefff48cfeff388dfeff7c8dfeffc08dfeff048efeff488efeff8c8efeff5890feff6692feff3a94feff1296feff06c3feff4ccafefffeccfeff00cdfeff3acdfeffead1feffd6dafeffe8dbfefffadbfefffedbfeff48ddfeff98ddfeffb4defeffc6defeffcadefeffe6dffeff12e0feff52e0feff70e1feff82e1feff86e1feff5ae3feff2cf0feff3ef0feff42f0feffe6f0feff12f1feff44f1feff7af4feff78f8feff8af8feffd2f8fefffef8feff08f9feffacf9feffdef9fefff0f9fefff4f9fefff6f9feff6601ffffb401ffffc601ffff4402ffff2a08ffff6ab9ffff72b9ffff84b9ffff88b9fffff8baffff24bbffff2ebbffff6cbdffff7abeffffeabeffff40bfffff72c2ffff06cdffffc2ceffff7cd3ffff48d6ffff06ddffff2cfbffff2e50000052500000b48d0000f48d0000348e00003e8e0000628e00007c8e0000868e000098940000cc940000d89400009ef0000034f10000300b010076150100bc190100621d01006c1d0100901d0100c82d0100d42d0100
+      m_ExpandedIDs: 8064feff2465feffe265feff2467feff2669feffc869feffb86bfeff3a6dfeff9e8cfeffa48cfefff48cfeff388dfeff7c8dfeffc08dfeff048efeff488efeff8c8efeff5890feff6692feff3a94feff1296feff06c3feff4ccafefffeccfeff00cdfeff3acdfeffead1feffd6dafeffe8dbfefffadbfefffedbfeff48ddfeff98ddfeffb4defeffc6defeffcadefeffe6dffeff12e0feff52e0feff70e1feff82e1feff86e1feff5ae3feff2cf0feff3ef0feff42f0feffe6f0feff12f1feff44f1feff7af4feff78f8feff8af8feffd2f8fefffef8feff08f9feffacf9feffdef9fefff0f9fefff4f9fefff6f9feff6601ffffb401ffffc601ffff4402ffff2a08ffff6ab9ffff72b9ffff84b9ffff88b9fffff8baffff24bbffff2ebbffff6cbdffff7abeffffeabeffff40bfffff72c2ffff06cdffffc2ceffff7cd3ffff48d6ffff06ddffff2cfbffff2e50000052500000b48d0000f48d0000348e00003e8e0000628e00007c8e0000868e000098940000cc940000d89400009ef0000034f10000300b010076150100bc190100621d01006c1d0100901d0100c82d0100d42d0100
       m_RenameOverlay:
         m_UserAcceptedRename: 0
         m_Name: 
@@ -567,7 +567,7 @@ MonoBehaviour:
       containerId: overlay-toolbar__top
       floating: 0
       collapsed: 0
-      displayed: 1
+      displayed: 0
       snapOffset: {x: 0, y: 24.8}
       snapOffsetDelta: {x: 0, y: 0}
       snapCorner: 0
@@ -584,9 +584,9 @@ MonoBehaviour:
   m_PlayAudio: 0
   m_AudioPlay: 0
   m_Position:
-    m_Target: {x: -1.2119505, y: 0.603812, z: -0.9282579}
+    m_Target: {x: -0.622312, y: -2.6276371, z: -0.9849096}
     speed: 2
-    m_Value: {x: -1.2119505, y: 0.603812, z: -0.9282579}
+    m_Value: {x: -0.622312, y: -2.6276371, z: -0.9849096}
   m_RenderMode: 0
   m_CameraMode:
     drawMode: 0
@@ -637,9 +637,9 @@ MonoBehaviour:
     speed: 2
     m_Value: {x: 0, y: 0, z: 0, w: 1}
   m_Size:
-    m_Target: 6.057157
+    m_Target: 11.722309
     speed: 2
-    m_Value: 6.057157
+    m_Value: 11.722309
   m_Ortho:
     m_Target: 1
     speed: 2
@@ -815,8 +815,8 @@ MonoBehaviour:
     y: 438.4
     width: 991.2
     height: 302.00003
-  m_MinSize: {x: 230, y: 250}
-  m_MaxSize: {x: 10000, y: 10000}
+  m_MinSize: {x: 231, y: 271}
+  m_MaxSize: {x: 10001, y: 10021}
   m_ActualView: {fileID: 12}
   m_Panes:
   - {fileID: 12}
@@ -865,21 +865,21 @@ MonoBehaviour:
     m_SkipHidden: 0
     m_SearchArea: 1
     m_Folders:
-    - Assets/Sprites
+    - Assets/Scenes
     m_Globs: []
     m_OriginalText: 
   m_ViewMode: 1
   m_StartGridSize: 64
   m_LastFolders:
-  - Assets/Sprites
+  - Assets/Scenes
   m_LastFoldersGridSize: -1
   m_LastProjectPath: C:\Users\adamo\Documents\GitHub\GameJamPowerhouse\GameJam Powerhouse
   m_LockTracker:
     m_IsLocked: 0
   m_FolderTreeState:
-    scrollPos: {x: 0, y: 240.00052}
-    m_SelectedIDs: c4520000
-    m_LastClickedID: 21188
+    scrollPos: {x: 0, y: 48.000397}
+    m_SelectedIDs: a6520000
+    m_LastClickedID: 21158
     m_ExpandedIDs: 00000000a4520000a6520000a8520000005c00009060000000ca9a3bffffff7f
     m_RenameOverlay:
       m_UserAcceptedRename: 0
@@ -933,8 +933,8 @@ MonoBehaviour:
       m_Icon: {fileID: 0}
       m_ResourceFile: 
   m_ListAreaState:
-    m_SelectedInstanceIDs: ea2d0100
-    m_LastClickedInstanceID: 77290
+    m_SelectedInstanceIDs: fe520000
+    m_LastClickedInstanceID: 21246
     m_HadKeyboardFocusLastEvent: 0
     m_ExpandedInstanceIDs: c6230000da680000206800007862000000000000a0500000966a00004e980000c6510000d47400003c51000008ae000004ae000050500000a6d2000084da00008cda000088da00007eda000098da00009cda000094da000090da00003459000060560000645800002e670000
     m_RenameOverlay:
@@ -960,7 +960,7 @@ MonoBehaviour:
       m_Icon: {fileID: 0}
       m_ResourceFile: 
     m_NewAssetIndexInList: -1
-    m_ScrollPosition: {x: 0, y: 59.499878}
+    m_ScrollPosition: {x: 0, y: 0}
     m_GridSize: 64
   m_SkipHiddenPackages: 0
   m_DirectoriesAreaWidth: 207
@@ -1091,7 +1091,7 @@ MonoBehaviour:
     m_CachedPref: -160
     m_ControlHash: -371814159
     m_PrefName: Preview_InspectorPreview
-  m_LastInspectedObjectInstanceID: 77290
+  m_LastInspectedObjectInstanceID: 21246
   m_LastVerticalScrollValue: 0
   m_GlobalObjectId: 
   m_InspectorMode: 0
