@@ -247,6 +247,18 @@ PrefabInstance:
       propertyPath: m_Enabled
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 1445645751949364026, guid: c22d211480d9682439e21dc1f6a2a124, type: 3}
+      propertyPath: mole
+      value: 
+      objectReference: {fileID: 234772117}
+    - target: {fileID: 1445645751949364026, guid: c22d211480d9682439e21dc1f6a2a124, type: 3}
+      propertyPath: seed
+      value: 
+      objectReference: {fileID: 1102034606}
+    - target: {fileID: 1445645751949364026, guid: c22d211480d9682439e21dc1f6a2a124, type: 3}
+      propertyPath: seedHole
+      value: 
+      objectReference: {fileID: 1499820261}
     - target: {fileID: 1445645751949364027, guid: c22d211480d9682439e21dc1f6a2a124, type: 3}
       propertyPath: m_RootOrder
       value: 1
@@ -2977,6 +2989,11 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.09388971, y: 1.108336}
   m_EdgeRadius: 0
+--- !u!1 &1102034606 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4248009988866038596, guid: c22d211480d9682439e21dc1f6a2a124, type: 3}
+  m_PrefabInstance: {fileID: 138939971}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1153560078
 GameObject:
   m_ObjectHideFlags: 0
@@ -3221,6 +3238,11 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1, y: 0.05988273}
   m_EdgeRadius: 0
+--- !u!1 &1499820261 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 286204075467857972, guid: c22d211480d9682439e21dc1f6a2a124, type: 3}
+  m_PrefabInstance: {fileID: 138939971}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1516383544
 GameObject:
   m_ObjectHideFlags: 0
