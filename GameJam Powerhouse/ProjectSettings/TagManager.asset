@@ -7,6 +7,7 @@ TagManager:
   - hole
   - seed_hole
   - concrete
+  - mole
   layers:
   - Default
   - TransparentFX
