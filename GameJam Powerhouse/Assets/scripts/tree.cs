@@ -103,6 +103,7 @@ public class tree : MonoBehaviour
 
         pulling = false;
 
+        distanceJoint.connectedAnchor = treePos;
         distanceJoint.enabled = false;
         lineRenderer.enabled = false;
 
