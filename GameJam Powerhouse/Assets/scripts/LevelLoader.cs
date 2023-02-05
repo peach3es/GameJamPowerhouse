@@ -12,12 +12,25 @@ public class LevelLoader : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-
+        if (Input.GetKeyDown("r"))
+        {
+            // Not on main menu or intro, reload on "r" click
+            int activeScene = SceneManager.GetActiveScene().buildIndex;
+            if (activeScene > 1)
+            {
+                StartCoroutine(LoadLevel(activeScene));
+            }
+        }
     }
 
     public void LoadNextLevel()
     {
         StartCoroutine(LoadLevel(SceneManager.GetActiveScene().buildIndex + 1));
+    }
+
+    public void LoadFirstLevel()
+    {
+        StartCoroutine(LoadLevel(2));
     }
 
     IEnumerator LoadLevel(int levelIndex)
